@@ -52,11 +52,11 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             @if (session()->has('browse_session_name') && session('browse_session_name') !== $current_school_session_name)
-                                <a class="nav-link text-danger disabled" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-exclamation-diamond-fill me-2"></i> Browsing as Academic Session {{session('browse_session_name')}}</a>
+                                <a class="nav-link text-danger disabled" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-exclamation-diamond-fill me-2"></i> {{ __('Browsing as Academic Session') }} {{session('browse_session_name')}}</a>
                             @elseif(\App\Models\SchoolSession::latest()->count() > 0)
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Current Academic Session {{$current_school_session_name}}</a>
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ __('Current Academic Session') }} {{$current_school_session_name}}</a>
                             @else
-                                <a class="nav-link text-danger disabled" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-exclamation-diamond-fill me-2"></i> Create an Academic Session.</a>
+                                <a class="nav-link text-danger disabled" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-exclamation-diamond-fill me-2"></i> {{ __('Create an Academic Session.') }}</a>
                             @endif
                         </li>
                     </ul>
@@ -79,7 +79,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{route('password.edit')}}">
-                                        <i class="bi bi-key me-2"></i> Change Password
+                                        <i class="bi bi-key me-2"></i> {{ __('Change Password') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
